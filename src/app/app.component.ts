@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DragScrollComponent } from 'ngx-drag-scroll'
+import { Component, Input, ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+@ViewChild('nav', {read: DragScrollComponent}) ds: DragScrollComponent
+
+moveLeft() {
+    this.ds.moveLeft()
+  }
+
+moveRight() {
+    this.ds.moveRight()
+  }
 }
